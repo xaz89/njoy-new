@@ -76,3 +76,20 @@ TweenMax.to(".salida-first", 1.5, {
     left: "-100%",
     ease: Expo.easeInOut
   });
+
+
+
+
+  // ENTRADA INDEX
+
+ /*  TweenMax.to('.left', 2, {
+    delay: .8,
+    width: '50%',
+    ease: Power2.easeInOut
+  })
+
+  TweenMax.to('.right', 2, {
+    delay: .6,
+    width: '50%',
+    ease: Power2.easeInOut
+  }) */

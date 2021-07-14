@@ -11837,6 +11837,7 @@ template {
   --dur: 1s;
   --font-search: calc(12px + (20 - 12) * (100vw - 320px) / (1280 - 320));
   --font-search2: 14px;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -11849,6 +11850,10 @@ h1, h2, h3, h4, h5 {
 }
 h1 span, h2 span, h3 span, h4 span, h5 span {
   font-family: var(--font2);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -11978,12 +11983,12 @@ ion-icon {
 }
 
 .hover-right .split.right.big-right .button-side {
-  transform: translate(35%, 0%);
+  transform: translate(15%, 0%);
   transition: all 0.5s;
 }
 
 .hover-left .split.left.big-left .button-side {
-  transform: translate(35%, 0%);
+  transform: translate(15%, 0%);
   transition: all 0.5s;
 }
 
@@ -12310,16 +12315,31 @@ ion-icon {
   left: 50%;
   right: 50%; */
   font-size: 90px;
-  font-family: "Montserrat ";
+  font-family: "Montserrat";
+  font-weight: bolder;
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 2px #fff;
   z-index: 1;
 }
 
+.down {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .down {
+    display: flex;
+    z-index: 99999;
+  }
+
+  :root {
+    scroll-behavior: smooth;
+  }
+
   html {
     height: auto;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -12361,6 +12381,7 @@ ion-icon {
 
   .hover-left .split.right {
     width: 100%;
+    right: 0;
   }
 
   .skateboard {
@@ -12390,8 +12411,17 @@ ion-icon {
     transform: translate(0%, 0%);
   }
 
+  .hover-right .split.right.big-right {
+    width: 100%;
+  }
+
+  .hover-right .split.right.big-right .text {
+    width: 100%;
+    transform: translate(0%, 0%);
+  }
+
   .hover-left .split.left.big-left .button-side {
-    transform: translate(0%, -10%);
+    transform: translate(0%, 0%);
     transition: all 0.5s;
     margin: auto;
     display: -webkit-box;
@@ -12419,6 +12449,39 @@ ion-icon {
     padding-right: 0;
   }
 
+  .hover-right .split.right.big-right .button-side {
+    transform: translate(0%, 0%);
+    transition: all 0.5s;
+    margin: auto;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 100%;
+  }
+  .hover-right .split.right.big-right .button-side .button {
+    width: 80%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hover-left .split.right.big-right .button-side {
+    transform: translate(0%, 0%);
+  }
+
   .text {
     padding-bottom: 70px;
   }
@@ -12439,6 +12502,11 @@ ion-icon {
   }
   .chat img {
     height: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .down {
+    display: block;
   }
 }
 
